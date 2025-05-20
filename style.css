@@ -1,4 +1,4 @@
-    <style>
+
         .gradient-text {
             background: linear-gradient(90deg, #3b82f6, #8b5cf6);
             -webkit-background-clip: text;
@@ -119,4 +119,4 @@
         .dark .border-gray-800 {
             border-color: #1f2937 !important;
         }
-    </style>
+
