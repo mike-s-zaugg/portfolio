@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sexendrecks</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+
     <!-- Standard-Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     
@@ -23,25 +28,30 @@
     <!-- Android/Chrome Icons -->
     <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
-
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-50 font-sans dark:bg-gray-900 transition-colors duration-300">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-sm z-50">
+    <nav class="fixed w-full bg-white shadow-sm z-50 dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <a href="#" class="text-xl font-bold gradient-text">Sexendrecks</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500">About</a>
-                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500">Skills</a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500">Contact</a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Contact</a>
+                    <button id="dark-mode-toggle" class="w-10 h-10 rounded-full flex items-center justify-center focus:outline-none">
+                        <i id="dark-mode-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+                    </button>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="dark-mode-toggle-mobile" class="w-10 h-10 rounded-full flex items-center justify-center focus:outline-none">
+                        <i id="dark-mode-icon-mobile" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+                    </button>
+                    <button id="menu-btn" class="text-gray-700 dark:text-gray-300 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -49,12 +59,12 @@
         </div>
         
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
-            <a href="#home" class="block py-2 text-gray-700 hover:text-blue-500">Home</a>
-            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-500">About</a>
-            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-500">Skills</a>
-            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-500">Projects</a>
-            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-500">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">About</a>
+            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Projects</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Contact</a>
         </div>
     </nav>
 
@@ -63,20 +73,20 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 dark:text-white">
                         Hi, I'm <span class="gradient-text">Mike</span>
                     </h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">
+                    <h2 class="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6">
                         A <span class="gradient-text font-medium">Software Developer</span> passionate about creating digital experiences
                     </h2>
-                    <p class="text-gray-600 mb-8 max-w-lg">
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
                         Welcome to my evolving portfolio. This is where I'll document my growth, showcase my projects, and share my journey in tech.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
                             View My Work
                         </a>
-                        <a href="#contact" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">
+                        <a href="#contact" class="border border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-800 px-6 py-3 rounded-lg font-medium transition duration-300 dark:text-blue-400 dark:border-blue-400">
                             Contact Me
                         </a>
                     </div>
@@ -84,7 +94,7 @@
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative w-64 h-64 md:w-80 md:h-80">
                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-xl"></div>
-                        <div class="relative floating w-full h-full bg-white rounded-full overflow-hidden shadow-xl">
+                        <div class="relative floating w-full h-full bg-white dark:bg-gray-700 rounded-full overflow-hidden shadow-xl">
                             <!-- Placeholder for your image -->
                             <div style="max-width: 320px;"><div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 120.5761%;"><iframe src="//iframely.net/akXTJsdo" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen=""></iframe></div></div>
                         </div>
@@ -95,10 +105,10 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section py-20 bg-white">
+    <section id="about" class="section py-20 bg-white dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">About <span class="gradient-text">Me</span></h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
             </div>
             
@@ -110,38 +120,38 @@
                     </div>
                 </div>
                 <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
-                    <p class="text-gray-600 mb-6">
+                    <h3 class="text-2xl font-semibold mb-4 dark:text-white">Who am I?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
                         I'm a passionate developer/designer/creator based in Rheinfelden. With a background in gaming, I bring a unique perspective to every project I work on.
                     </p>
-                    <p class="text-gray-600 mb-6">
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
                         My journey in tech started a year ago. Since then, I've been constantly learning and improving my skills to create better solutions and experiences.
                     </p>
-                    <p class="text-gray-600 mb-8">
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
                         When I'm not coding, you can find me playing the drums. I believe in continuous growth and documenting my progress, which is why this portfolio will evolve as I do.
                     </p>
                     
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                             <div class="text-blue-500 mb-2">
                                 <i class="fas fa-graduation-cap text-2xl"></i>
                             </div>
-                            <h4 class="font-medium">Education</h4>
-                            <p class="text-sm text-gray-500">Bezirkschule</p>
+                            <h4 class="font-medium dark:text-white">Education</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Bezirkschule</p>
                         </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                             <div class="text-purple-500 mb-2">
                                 <i class="fas fa-briefcase text-2xl"></i>
                             </div>
-                            <h4 class="font-medium">Experience</h4>
-                            <p class="text-sm text-gray-500">1 Year</p>
+                            <h4 class="font-medium dark:text-white">Experience</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">1 Year</p>
                         </div>
-                        <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                             <div class="text-green-500 mb-2">
                                 <i class="fas fa-project-diagram text-2xl"></i>
                             </div>
-                            <h4 class="font-medium">Projects</h4>
-                            <p class="text-sm text-gray-500">2+ Completed</p>
+                            <h4 class="font-medium dark:text-white">Projects</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">2+ Completed</p>
                         </div>
                     </div>
                 </div>
@@ -150,152 +160,152 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section py-20 bg-gray-50">
+    <section id="skills" class="section py-20 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Skills</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">My <span class="gradient-text">Skills</span></h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
                     These are the technologies I work with. I'm constantly learning and adding new skills to my toolkit.
                 </p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <!-- Skill Item 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
                     <div class="text-blue-500 mb-4 text-4xl">
                         <i class="fab fa-html5"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">HTML5</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">HTML5</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
                 
                 <!-- Skill Item 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
                     <div class="text-blue-400 mb-4 text-4xl">
                         <i class="fab fa-css3-alt"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">CSS3</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">CSS3</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div class="bg-blue-400 h-2 rounded-full" style="width: 85%"></div>
                     </div>
                 </div>
                 
                 <!-- Skill Item 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
                     <div class="text-yellow-500 mb-4 text-4xl">
                         <i class="fab fa-js"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">JavaScript</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">JavaScript</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div class="bg-yellow-500 h-2 rounded-full" style="width: 20%"></div>
                     </div>
                 </div>
                 
                 <!-- Skill Item 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
                     <div class="text-blue-600 mb-4 text-4xl">
                         <i class="fab fa-react"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">React</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">React</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div class="bg-blue-600 h-2 rounded-full" style="width: 5%"></div>
                     </div>
                 </div>
                 
                 <!-- Skill Item 5 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
                     <div class="text-green-500 mb-4 text-4xl">
                         <i class="fab fa-python"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">Python</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">Python</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div class="bg-green-500 h-2 rounded-full" style="width: 25%"></div>
                     </div>
                 </div>
                 
                 <!-- Skill Item 6 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
                     <div class="text-pink-500 mb-4 text-4xl">
                         <i class="fab fa-figma"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">UI/UX Design</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">UI/UX Design</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div class="bg-pink-500 h-2 rounded-full" style="width: 35%"></div>
                     </div>
                 </div>
                 
                 <!-- Skill Item 7 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
                     <div class="text-purple-500 mb-4 text-4xl">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">Database</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">Database</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div class="bg-purple-500 h-2 rounded-full" style="width: 35%"></div>
                     </div>
                 </div>
                 
                 <!-- Skill Item 8 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-                    <div class="text-gray-800 mb-4 text-4xl">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm card-hover">
+                    <div class="text-gray-800 dark:text-gray-300 mb-4 text-4xl">
                         <i class="fa-brands fa-github"></i>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">Github</h3>
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-gray-800 h-2 rounded-full" style="width: 10%"></div>
+                    <h3 class="text-lg font-semibold mb-2 dark:text-white">Github</h3>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-gray-800 dark:bg-gray-300 h-2 rounded-full" style="width: 10%"></div>
                     </div>
                 </div>
             </div>
             
             <div class="mt-12 text-center">
-                <p class="text-gray-600 mb-6">
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
                     I'm always learning new technologies. Currently exploring:
                 </p>
                 <div class="flex flex-wrap justify-center gap-3">
-                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Next.js</span>
-                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">GraphQL</span>
-                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                    <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                    <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Next.js</span>
+                    <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full text-sm">GraphQL</span>
+                    <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full text-sm">Docker</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section py-20 bg-white">
+    <section id="projects" class="section py-20 bg-white dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="gradient-text">Projects</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">My <span class="gradient-text">Projects</span></h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
                     Here are some of my recent projects. Each one represents a step in my learning journey.
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm card-hover">
                     <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
                         <i class="fas fa-project-diagram text-6xl text-white opacity-80"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">E-commerce Website</h3>
-                        <p class="text-gray-600 mb-4">
+                        <h3 class="text-xl font-semibold mb-2 dark:text-white">E-commerce Website</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
                             A full-stack e-commerce platform with React, Node.js, and MongoDB.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Node.js</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">MongoDB</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-xs">MongoDB</span>
                         </div>
                         <div class="flex space-x-3">
-                            <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                            <a href="#" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
@@ -303,25 +313,25 @@
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm card-hover">
                     <div class="h-48 bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
                         <i class="fas fa-mobile-alt text-6xl text-white opacity-80"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
-                        <p class="text-gray-600 mb-4">
+                        <h3 class="text-xl font-semibold mb-2 dark:text-white">Task Management App</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
                             A mobile-first task management application with offline capabilities.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React Native</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Redux</span>
-                            <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">React Native</span>
+                            <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Redux</span>
+                            <span class="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">Firebase</span>
                         </div>
                         <div class="flex space-x-3">
-                            <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                            <a href="#" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
@@ -329,25 +339,25 @@
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-sm card-hover">
                     <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
                         <i class="fas fa-chart-line text-6xl text-white opacity-80"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Data Visualization Dashboard</h3>
-                        <p class="text-gray-600 mb-4">
+                        <h3 class="text-xl font-semibold mb-2 dark:text-white">Data Visualization Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
                             Interactive dashboard for visualizing complex datasets with filtering capabilities.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">D3.js</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Express</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">PostgreSQL</span>
+                            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">D3.js</span>
+                            <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Express</span>
+                            <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded text-xs">PostgreSQL</span>
                         </div>
                         <div class="flex space-x-3">
-                            <a href="#" class="text-blue-500 hover:text-blue-700">
+                            <a href="#" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                            <a href="#" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
@@ -356,7 +366,7 @@
             </div>
             
             <div class="mt-12 text-center">
-                <a href="#" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">
+                <a href="#" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition duration-300 dark:text-blue-400 dark:border-blue-400">
                     View All Projects
                 </a>
             </div>
@@ -364,36 +374,36 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section py-20 bg-gray-50">
+    <section id="contact" class="section py-20 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Get In <span class="gradient-text">Touch</span></h2>
                 <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto mt-4">
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mt-4">
                     Have a project in mind or want to collaborate? Feel free to reach out!
                 </p>
             </div>
             
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <div class="bg-white p-8 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-semibold mb-6">Send me a message</h3>
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm">
+                        <h3 class="text-xl font-semibold mb-6 dark:text-white">Send me a message</h3>
                         <form id="contact-form">
                             <div class="mb-4">
-                                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
                             </div>
                             <div class="mb-4">
-                                <label for="email" class="block text-gray-700 mb-2">Your Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
                             </div>
                             <div class="mb-4">
-                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
-                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
                             </div>
                             <div class="mb-6">
-                                <label for="message" class="block text-gray-700 mb-2">Message</label>
-                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
                             </div>
                             <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
                                 Send Message
@@ -403,8 +413,8 @@
                 </div>
                 
                 <div class="md:w-1/2 md:pl-12">
-                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-                    <p class="text-gray-600 mb-8">
+                    <h3 class="text-xl font-semibold mb-6 dark:text-white">Contact Information</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
                         I'm available for freelance work and collaborations. Here's how you can reach me:
                     </p>
                     
@@ -414,8 +424,8 @@
                                 <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Location</h4>
-                                <p class="text-gray-600">Rheinfelden, Aargau, Switzerland</p>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Rheinfelden, Aargau, Switzerland</p>
                             </div>
                         </div>
                         
@@ -424,8 +434,8 @@
                                 <i class="fas fa-envelope text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Email</h4>
-                                <p class="text-gray-600">mike.zaugg.webdev@gmail.com</p>
+                                <h4 class="font-medium text-gray-800 dark:text-white">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">mike.zaugg.webdev@gmail.com</p>
                             </div>
                         </div>
                         
@@ -441,18 +451,18 @@
                     </div>
                     
                     <div class="mt-10">
-                        <h4 class="font-medium text-gray-800 mb-4">Follow Me</h4>
+                        <h4 class="font-medium text-gray-800 dark:text-white mb-4">Follow Me</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 dark:bg-gray-700 text-blue-500 dark:text-blue-400 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 dark:bg-gray-700 text-blue-500 dark:text-blue-400 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 dark:bg-gray-700 text-blue-500 dark:text-blue-400 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 dark:bg-gray-700 text-blue-500 dark:text-blue-400 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-300">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
@@ -584,6 +594,41 @@
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         });
+        
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+        const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
+        const darkModeIconMobile = document.getElementById('dark-mode-icon-mobile');
+        
+        // Check for saved user preference, if any, on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+            darkModeIconMobile.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        // Toggle dark mode
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+                darkModeIconMobile.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+                darkModeIconMobile.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+        
+        // Add event listeners for both desktop and mobile toggle buttons
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        darkModeToggleMobile.addEventListener('click', toggleDarkMode);
     </script>
 </body>
 </html>
