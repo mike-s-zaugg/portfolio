@@ -1,23 +1,20 @@
+
 .gradient-text {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
-
 .card-hover {
     transition: all 0.3s ease;
 }
-
 .card-hover:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-
 .nav-link {
     position: relative;
 }
-
 .nav-link::after {
     content: '';
     position: absolute;
@@ -28,70 +25,55 @@
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     transition: width 0.3s ease;
 }
-
 .nav-link:hover::after {
     width: 100%;
 }
-
 .section {
     scroll-margin-top: 100px;
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
-
 /* Animation für Hero-Bereich */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
 }
-
 .floating {
     animation: float 3s ease-in-out infinite;
 }
-
 /* Dark Mode Stile */
 .dark .bg-gray-50 {
     background-color: #111827 !important;
 }
-
 .dark .bg-white {
     background-color: #1f2937 !important;
 }
-
 .dark .text-gray-600, 
 .dark .text-gray-700,
 .dark .text-gray-800 {
     color: #e5e7eb !important;
 }
-
 .dark .bg-gray-200 {
     background-color: #374151 !important;
 }
-
 .dark .bg-gray-100 {
     background-color: #1f2937 !important;
 }
-
 .dark .bg-blue-100 {
     background-color: #1e40af !important;
 }
-
 .dark .bg-purple-100 {
     background-color: #5b21b6 !important;
 }
-
 .dark .bg-green-100 {
     background-color: #065f46 !important;
 }
-
 .dark .bg-yellow-100 {
     background-color: #92400e !important;
 }
-
 .dark .bg-pink-100 {
     background-color: #831843 !important;
 }
-
 .dark .text-blue-800,
 .dark .text-purple-800,
 .dark .text-green-800,
@@ -99,19 +81,21 @@
 .dark .text-pink-800 {
     color: #f3f4f6 !important;
 }
-
 .dark .border-gray-300 {
     border-color: #4b5563 !important;
 }
-
 .dark .bg-gray-900 {
     background-color: #030712 !important;
 }
-
 .dark .text-gray-400 {
     color: #9ca3af !important;
 }
-
 .dark .border-gray-800 {
     border-color: #1f2937 !important;
+}
+.profile-image {
+    width: 256px !important;
+    height: 256px !important;
+    object-fit: cover !important;
+    display: block !important;
 }
