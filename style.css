@@ -1,6 +1,9 @@
-model-viewer {
-      width: 600px; height: 600px;
+@media (max-width: 768px) {
+  model-viewer {
+    display: none;
+  }
 }
+
 .gradient-text {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     -webkit-background-clip: text;
@@ -13,9 +16,6 @@ model-viewer {
 .card-hover:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-#nav {
-      z-index: 99999 !important; 
 }
 .nav-link {
     position: relative;
