@@ -14,8 +14,8 @@ model-viewer {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-nav .fixed .w-full .bg-white .shadow-sm .z-50 dark:bg-gray-800 {
-      z-index: 99999;
+#nav {
+      z-index: 9999;
 }
 .nav-link {
     position: relative;
