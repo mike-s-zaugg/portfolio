@@ -1,4 +1,6 @@
-
+model-viewer {
+      width: 600px; height: 600px;
+}
 .gradient-text {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     -webkit-background-clip: text;
