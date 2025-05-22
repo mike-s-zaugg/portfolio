@@ -1,17 +1,32 @@
-body{
-    background-color: rgb(71, 71, 71); /* Hintergrund */
-}
-
+/* Base Typography */
 p {
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
+
 h1, h2, h3, h4 {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
+
+/* Quote specific typography */
+.quote {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+}
+
+.author {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+body{
+    background-color: rgb(71, 71, 71); /* Hintergrund */
+}
+
 .hero {
     position: fixed;
     top: 0;
