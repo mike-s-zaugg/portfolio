@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexendrecks - Quotes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm dark:bg-gray-800" style="z-index: 99999;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold gradient-text">Sexendrecks</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/#home" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Home</a>
+                    <a href="/#about" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">About</a>
+                    <a href="/#skills" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Skills</a>
+                    <a href="/#projects" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Projects</a>
+                    <a href="/#contact" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Contact</a>
+                    <button id="dark-mode-toggle" class="w-10 h-10 rounded-full flex items-center justify-center focus:outline-none">
+                        <i id="dark-mode-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <button id="dark-mode-toggle-mobile" class="w-10 h-10 rounded-full flex items-center justify-center focus:outline-none">
+                        <i id="dark-mode-icon-mobile" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+                    </button>
+                    <button id="menu-btn" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">About</a>
+            <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Projects</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-500 dark:text-gray-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-24 pb-10 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 dark:text-white">
+                    Inspiring <span class="gradient-text">Quotes</span>
+                </h1>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    A collection of wisdom that inspires and motivates.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quotes Carousel Section -->
+    <div class="quotes-section">
+        <div class="quotes-container">
+            <div class="quotes-slider">
+                <div class="quote-card" data-index="0">
+                    <div class="quote">"Der Weg ist das Ziel."</div>
+                    <div class="author">- Konfuzius</div>
+                </div>
+                <div class="quote-card" data-index="1">
+                    <div class="quote">"Denke nicht so oft an das, was dir fehlt, sondern an das, was du hast."</div>
+                    <div class="author">- Marc Aurel</div>
+                </div>
+                <div class="quote-card" data-index="2">
+                    <div class="quote">"Das Leben ist wie Fahrrad fahren. Um die Balance zu halten, musst du in Bewegung bleiben."</div>
+                    <div class="author">- Albert Einstein</div>
+                </div>
+                <div class="quote-card" data-index="3">
+                    <div class="quote">"Wer aufhört, besser werden zu wollen, hört auf, gut zu sein."</div>
+                    <div class="author">- Marie von Ebner-Eschenbach</div>
+                </div>
+                <div class="quote-card" data-index="4">
+                    <div class="quote">"Die Zukunft hängt davon ab, was wir heute tun."</div>
+                    <div class="author">- Mahatma Gandhi</div>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="text-xl font-bold gradient-text">Sexendrecks</a>
+                    <p class="text-gray-500 dark:text-gray-400 mt-4 max-w-xs">
+                        A constantly evolving showcase of my work, skills, and growth as a developer.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Home</a></li>
+                            <li><a href="#about" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">About</a></li>
+                            <li><a href="#skills" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Skills</a></li>
+                            <li><a href="#projects" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Projects</a></li>
+                            <li><a href="#contact" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Resources</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Blog</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">GitHub</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Resume</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Learning Path</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Terms of Service</a></li>
+                            <li><a href="#" class="text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition duration-300">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 dark:text-gray-400">
+                    &copy; <span id="year"></span> Sexendrecks. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Made with <i class="fas fa-heart text-red-400"></i> and <i class="fas fa-glass-water text-yellow-400"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const darkModeIcon = document.getElementById('dark-mode-icon');
+        const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
+        const darkModeIconMobile = document.getElementById('dark-mode-icon-mobile');
+        
+        // Check for saved user preference, if any, on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+            darkModeIconMobile.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        // Toggle dark mode
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+                darkModeIconMobile.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+                darkModeIconMobile.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+        
+        // Add event listeners for both desktop and mobile toggle buttons
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+
+        // Quotes slider functionality
+        const quoteCards = document.querySelectorAll('.quote-card');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let interval;
+
+        function showQuote(index) {
+            quoteCards.forEach((card, i) => {
+                card.classList.remove('active', 'previous');
+                if (i === index) {
+                    card.classList.add('active');
+                } else if (i === (index - 1 + quoteCards.length) % quoteCards.length) {
+                    card.classList.add('previous');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextQuote() {
+            currentIndex = (currentIndex + 1) % quoteCards.length;
+            showQuote(currentIndex);
+        }
+
+        function startSlideshow() {
+            showQuote(currentIndex);
+            interval = setInterval(nextQuote, 4000);
+        }
+
+        // Add click handlers for pagination dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(interval);
+                currentIndex = index;
+                showQuote(currentIndex);
+                interval = setInterval(nextQuote, 4000);
+            });
+        });
+
+        // Pause on hover
+        const quotesContainer = document.querySelector('.quotes-container');
+        quotesContainer.addEventListener('mouseenter', () => {
+            clearInterval(interval);
+        });
+
+        quotesContainer.addEventListener('mouseleave', () => {
+            interval = setInterval(nextQuote, 4000);
+        });
+
+        // Start the slideshow
+        startSlideshow();
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html> 
