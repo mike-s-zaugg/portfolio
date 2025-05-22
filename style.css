@@ -165,6 +165,9 @@ body{
     height: 256px !important;
     object-fit: cover !important;
     display: block !important;
+    box-shadow: 4px 5px 44px 0px rgba(0,0,0,0.38);
+    -webkit-box-shadow: 4px 5px 44px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: 4px 5px 44px 0px rgba(0,0,0,0.38);
 }
 
 /* Quotes Section Styles */
