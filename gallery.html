@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexendrecks</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XG4M7Z90QZ"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
       gtag('config', 'G-XG4M7Z90QZ');
     </script>
-      <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
         }
     </script>
-     <title>Gallery - Mike</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
+    <!-- Standard-Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    
+    <!-- PNG-Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="site.webmanifest" />
+    
+    <!-- Android/Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
 </head>
 <body class="bg-gray-50 font-sans dark:bg-gray-900 transition-colors duration-300">
     <!-- Navigation -->
@@ -26,11 +50,11 @@
                     <a href="#" class="text-xl font-bold gradient-text">Sexendrecks</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/#home" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Home</a>
-                    <a href="/#about" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">About</a>
-                    <a href="/#skills" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Skills</a>
-                    <a href="/#projects" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Projects</a>
-                    <a href="/#contact" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Contact</a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 dark:text-gray-300">Contact</a>
                     <button id="dark-mode-toggle" class="w-10 h-10 rounded-full flex items-center justify-center focus:outline-none">
                         <i id="dark-mode-icon" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
                     </button>
@@ -401,7 +425,6 @@
         </div>
     </footer>
 
-    <!-- Dark Mode Script -->
     <script>
         // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
@@ -428,6 +451,24 @@
                     // Close mobile menu if open
                     mobileMenu.classList.add('hidden');
                 }
+            });
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
         
