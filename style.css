@@ -23,7 +23,7 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
-body{
+body {
     background-color: rgb(71, 71, 71); /* Hintergrund */
 }
 
@@ -36,18 +36,18 @@ body{
     background: url('skyline.jpg') center center / cover no-repeat;
     z-index: -1;
     filter: grayscale(100%);
-  }
-  
-  /* Die Welle */
-  .welle {
+}
+ 
+/* Die Welle */
+.welle {
     position: relative;
     z-index: 1;
     line-height: 0;
     bottom: -1px;
-  }
-  
-  /* Der Content */
-  .content {
+}
+ 
+/* Der Content */
+.content {
     position: relative;
     width: 110%;
     z-index: 2;
@@ -55,12 +55,12 @@ body{
     color: white;
     padding: 100px 20px;
     min-height: 600vh; /* Nur zum Testen scrollbarer Inhalt */
-  }
-  .hero-placeholder {
+}
+.hero-placeholder {
     height: 50vh;
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     model-viewer {
         display: none;
     }
