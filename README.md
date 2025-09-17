@@ -14,7 +14,7 @@ Bitte beachten Sie dass dieses Portfolio rein zum testen genutzt wird und daher 
 - HTML
 - CSS
 - JavaScript
-- [Model Viewer ]([https://mike-s-zaugg.githhub.io/portfolio/](https://modelviewer.dev/))
+- [Model Viewer ](https://modelviewer.dev/)
 
 ## 🌐 Live-Version
 
